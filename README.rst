@@ -19,7 +19,7 @@ Installation
 
 Currently, via ``git`` & ``pip``::
 
-    pip install git+pip install git+https://github.com/kezabelle/screenslop.git
+    pip install git+https://github.com/kezabelle/screenslop.git
     
 Or::
 
