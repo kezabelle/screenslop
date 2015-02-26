@@ -152,12 +152,18 @@ class Screenslop(object):
 
 
 def remove_debug_toolbar_if_exists(task):
+    # Remove django-debug-toolbar if it exists, without polluting
+    # the javascript namespace afterwards.
     return  """
-    var djdebug_exists = document.getElementById('djDebug');
-    if (djdebug_exists === void(0) || djdebug_exists === null) {}
-    else {
-        djdebug_exists.remove();
-    }
+    ;(function(document) {
+        var djdebug_exists = document.getElementById('djDebug');
+        if (djdebug_exists === void(0) || djdebug_exists === null) {
+            return false;
+        } else {
+            djdebug_exists.remove();
+            return true;
+        }
+    })(document);
     """
 
 
