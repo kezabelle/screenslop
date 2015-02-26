@@ -86,7 +86,7 @@ class Task(namedtuple('Task', 'window_size url')):
 class Screenslop(object):
     __slots__ = ('window_sizes', 'urls', 'filename_template')
 
-    def __init__(self, window_sizes, urls, filename_template='{orientation!s}_{window_size!s}__{now!s}.png'):
+    def __init__(self, window_sizes, urls, filename_template='{orientation!s}_{window_size!s}.png'):
         self.window_sizes = window_sizes
         self.urls = urls
         self.filename_template = filename_template
