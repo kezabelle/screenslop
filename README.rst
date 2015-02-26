@@ -3,7 +3,7 @@ Screenslop! (0.1.0)
 
 A quick and dirty way of testing responsive breakpoints for your CSS etc,
 by smashing a `selenium-controlled`_ `Firefox`_ into a given ``url``
- at a number of resolutions.
+at a number of resolutions.
 
 Dependencies
 ------------
