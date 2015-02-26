@@ -38,8 +38,7 @@ Screenshots
 ~~~~~~~~~~~
 
 Every iteration should yield two screenshots to disk, one which
-represents the full page, and one which just represents the viewport
- at a given
+represents the full page, and one which just represents the viewport at a given
 set of dimensions. The latter is always prefixed with ``cropped_...``
 
 .. _selenium-controlled: http://www.seleniumhq.org/
