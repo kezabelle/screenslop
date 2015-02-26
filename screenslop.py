@@ -2,10 +2,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 from __future__ import print_function
-from urlparse import urlparse
+try:
+    from urllib.parse import urlparse
+except ImportError:  # Python 2
+    from urlparse import urlparse
 import sys
 from PIL import Image
-from httplib import CannotSendRequest
+try:
+    from http.client import CannotSendRequest
+except ImportError: # Python 2
+    from httplib import CannotSendRequest
 from collections import namedtuple
 from datetime import datetime
 from itertools import product
