@@ -54,6 +54,15 @@ DEFAULT_RESOLUTIONS = LANDSCAPE_RESOLUTIONS + PORTRAIT_RESOLUTIONS
 
 
 class Task(namedtuple('Task', 'window_size url')):
+    @classmethod
+    def from_string(cls, wxh):
+        """
+        Creates a new Task by parsing the NNNxNNN resolution.
+        Does not include a `url` - use instance._replace to add one.
+        """
+        width, x, height = wxh.partition('x')
+        return cls((width, height), None)
+        
     @property
     def dimensions(self):
         return '{width!s}x{height!s}'.format(width=self.window_size[0],
